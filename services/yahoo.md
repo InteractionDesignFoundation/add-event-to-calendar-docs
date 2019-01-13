@@ -6,6 +6,8 @@ There is no official documentation.
 ## Basic URL
 `https://calendar.yahoo.com/`
 
+[Add a test event](https://calendar.yahoo.com/?v=60&st=st20201231T193000&DUR=0200&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
+
 ## Parameters
 
 ### v
@@ -33,12 +35,12 @@ required: yes
 
 format: 
 
-example: `st=20090514T180000Z`
+example: `st=20201231T193000Z`
 
 description: Event start time. Options:
- - `20090514T180000Z`: Event start time in UTC. Will be converted to the user's time zone.
- - `20090514T180000`: Event start time in user's local time
- - `20090514`: vent start time for an all day event. `DUR` value is ignored if this form is used.
+ - `20201231T193000Z`: Event start time in UTC. Will be converted to the user's time zone.
+ - `20201231T193000`: Event start time in user's local time
+ - `20201231`: vent start time for an all day event. `DUR` value is ignored if this form is used.
 
 
 ### dur
@@ -101,7 +103,7 @@ example: `desc=With clowns and stuff`
 
 description: description of your event.
 This may contain line breaks (encoded in the usual manner, these become %0A).
-This may not contain HTML.
+This may contain HTML, but all tags will be stripped out.
 This appears to accept quite a large amount of text,
 considering that it is being passed through on a query string.
 

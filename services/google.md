@@ -5,12 +5,12 @@
 There is no official documentation for the current version, but Google
 had some documentation in the past.
 You can see it using web.archive wayback machine (it still works!):
-[Share your events with an individual, a group, or the whole world](https://web.archive.org/web/20120313011336/http://www.google.com/googlecalendar/event_publisher_guide.html).
- 
-
+[Share your events with an individual, a group, or the whole world](https://web.archive.org/web/20120313011336/http://www.google.com/googlecalendar/event_publisher_guide.html). 
 
 ## Basic URL
 `https://calendar.google.com/calendar/render`
+
+[Add a test event](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bithday&dates=20201231T193000Z/20201231T223000Z&details=With%20clowns%20and%20stuff&location=North%20Pole)
 
 ## Parameters
 
@@ -39,15 +39,15 @@ required: yes
 
 format: YYYYMMDDToHHMMSSZ/YYYYMMDDToHHMMSSZ
 
-example: `dates=20090621T063000Z/20090621T080000Z`
+example: `dates=20201231T193000Z/20201231T223000Z`
 
 description: gives the start and end dates and times (in Greenwich Mean Time) for the event.
 Dates must have both start and end time or it won't work.
 The start and end date can be the same (if appropriate).
 Special cases:
- - to use the user's timezone: `20161208T160000/20161208T180000` (don't specify a timezone);
- - to use UTC timezone, convert datetime to UTC, then use `Z`  suffix: `20131208T160000Z/20131208T180000Z`;
- - for all-day events use `20161208/20161209`. You must use the following date as the end date for a one day all day event, or +1 day to whatever you want the end date to be.
+ - to use the user's timezone: `20201231T193000/20201231T223000` (don't specify a timezone);
+ - to use UTC timezone, convert datetime to UTC, then use `Z`  suffix: `20201231T193000Z/20201231T223000Z`;
+ - for all-day events use `20201231/20210101`. You must use the following date as the end date for a one day all day event, or +1 day to whatever you want the end date to be.
 
 ### details
 required: no
