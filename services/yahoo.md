@@ -175,7 +175,9 @@ required: no (yes if `RPAT` specified)
 
 format: unix timestamp
 
-example: `RPAT=1274486399`
+example: `REND=20191231`
 
 description: Used to specify when a recurring event pattern ends.
-This is represented by the total number of seconds since `1/1/1970 12:00:00` 
+Date format: `YYYYMMDD`
+
+ 
