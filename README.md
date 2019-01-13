@@ -11,7 +11,7 @@ parameters and features that we can use in our products.
 ## Docs for Services
 1. [Google calendar](/services/google.md)
 1. [Yahoo calendar](/services/yahoo.md)
-1. [Outlook live](/services/outlook-live.md)
+1. [Outlook Web](/services/outlook-web.md)
 
 ## Popular packages
 ### JavaScript
