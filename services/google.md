@@ -1,1 +1,121 @@
 # Google
+
+## Official documentation
+
+There is no official documentation for the current version, but Google
+had some documentation in the past.
+You can see it using web.archive wayback machine (it still works!):
+[Share your events with an individual, a group, or the whole world](https://web.archive.org/web/20120313011336/http://www.google.com/googlecalendar/event_publisher_guide.html).
+ 
+
+
+## Basic URL
+`https://calendar.google.com/calendar/render`
+
+## Parameters
+
+## action
+required: yes
+
+format: string/eval
+
+possible values: `TEMPLATE`
+
+example: `action=TEMPLATE`
+
+description: A default required parameter.
+
+### text
+required: yes
+
+format: text
+
+example: `text=Bithday`
+
+description: event title.
+
+### dates
+required: yes
+
+format: YYYYMMDDToHHMMSSZ/YYYYMMDDToHHMMSSZ
+
+example: `dates=20090621T063000Z/20090621T080000Z`
+
+description: gives the start and end dates and times (in Greenwich Mean Time) for the event.
+Dates must have both start and end time or it won't work.
+The start and end date can be the same (if appropriate).
+Special cases:
+ - to use the user's timezone: `20161208T160000/20161208T180000` (don't specify a timezone);
+ - to use UTC timezone, convert datetime to UTC, then use `Z`  suffix: `20131208T160000Z/20131208T180000Z`;
+ - for all-day events use `20161208/20161209`. You must use the following date as the end date for a one day all day event, or +1 day to whatever you want the end date to be.
+
+### details
+required: no
+
+format: text
+
+example: `details=With clowns and stuff`
+
+description: description of your event.
+
+### location
+required: no
+
+format: text
+
+example: `location=North Pole`
+
+description: set location of the event.
+Make sure it's an address google maps can read easily.
+
+### trp
+required: no
+
+format: true/false
+
+example: `trp=false`
+
+description: Show event as busy (true) or available (false).
+Stands for [RFC 5545 transparency](https://tools.ietf.org/html/rfc5545#section-3.8.2.7). 
+
+    
+### sprop
+required: no
+
+format: key-value
+
+example: `sprop=website:www.santa.org&sprop=name:Sata-online`
+
+description: identify the website or event source
+
+### add
+required: no
+
+format: text (comma-separated emails)
+
+example: `add=elf1@example.com,elf2@example.com`
+
+description: a list of guests (comma-separated).
+
+### src
+required: no
+
+format: text (email)
+
+example: `src=santa@example.com`
+
+description: add an event to a shared calendar rather than a user's default.
+    
+    
+### recur
+required: no
+
+format: text ([RFC-5545 specs](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html))
+
+example: `recur=RRULE:FREQ=DAILY`
+
+description: set recurring events.
+
+    
+## Tools
+1. http://output.jsbin.com/xujuluw
