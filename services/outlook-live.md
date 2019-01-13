@@ -6,6 +6,8 @@ There is no official documentation.
 ## Basic URL
 `https://outlook.live.com/owa/`
 
+[Add a test event](https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=20201231T193000&enddt=20201231T223000&subject=Bithday&body=With%20clowns%20and%20stuff&location=North%20Pole)
+
 ## Parameters
 
 ### path
@@ -29,24 +31,22 @@ description: Action name.
 ### startdt
 required: yes
 
-format: string
+format: datetime (`YYYYMMDDTHHmmSS`) or date (`YYYYMMDD`, for all-day events) in UTC
 
-example: `startdt=20080101T143000`
+example: `startdt=20201231T193000`
 
-description: The start and end dates for your event YYYYMMDDTHHmmSS,
-e.g. 20080101T143000 would be half past two on the 1st Jan 2008.
-You may need to convert them to the right time zone for your calendar,
-I haven’t tested this.
-You may also be able to specify all-day events using the YYYYMMDD format.
+description: The start date for the event.
+A datetime will be automatically convetred to user's timezone.
+To specify all-day events use the `YYYYMMDD` format.
 
 ### enddt
 required: yes
 
-format: string
+format: datetime (`YYYYMMDDTHHmmSS`) or date (`YYYYMMDD`, for all-day events) in UTC
 
-example: `enddt=20080101T143000`
+example: `enddt=20201231T223000`
 
-description: Specify the end time of the event, format as for `startdt`.
+description: The end time of the event, format as for `startdt`.
 
 ### subject
 required: yes
@@ -64,7 +64,7 @@ format: boolean (`true`/`false`)
 
 example: `allday=true`
 
-description: Where event is all-day or not.
+description: whether event is all-day or not.
 
 ### body
 required: no
