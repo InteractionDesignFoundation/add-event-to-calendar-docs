@@ -33,7 +33,7 @@ May not contain HTML.
 ### st
 required: yes
 
-format: 
+format: datetime (ISO8601)
 
 example: `st=20201231T193000Z`
 
@@ -46,7 +46,7 @@ description: Event start time. Options:
 ### dur
 required: no
 
-format: 
+format: time (`HHmm`)
 
 example: `dur=0200`
 
