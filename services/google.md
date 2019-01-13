@@ -118,4 +118,4 @@ description: set recurring events.
 
     
 ## Tools
-1. http://output.jsbin.com/xujuluw
+1. [Google calendar link generator](http://output.jsbin.com/xujuluw)
