@@ -15,6 +15,7 @@ parameters and features that we can use in our products.
 
 ## Popular packages
 ### JavaScript
+ 1. [carlsednaoui/add-to-calendar-buttons](https://github.com/carlsednaoui/add-to-calendar-buttons)
  1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar)
  
 ### PHP
