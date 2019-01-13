@@ -13,7 +13,11 @@ parameters and features that we can use in our products.
 1. [Yahoo calendar](/services/yahoo.md)
 1. [Outlook live](/services/outlook-live.md)
 
-
 ## Popular packages
+### JavaScript
+ 1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar)
+ 
+### PHP
+ 1. [spatie/calendar-links](https://github.com/spatie/calendar-links)
 
- _List your package/repo here_
+_List your package/repo here_
