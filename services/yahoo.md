@@ -175,7 +175,7 @@ Examples:
 ### REND
 required: no (yes if `RPAT` specified)
 
-format: unix timestamp
+format: datetime (`YYYYMMDD`)
 
 example: `REND=20191231`
 
