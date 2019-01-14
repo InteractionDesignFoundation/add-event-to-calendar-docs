@@ -6,7 +6,7 @@ There is no official documentation.
 ## Basic URL
 `https://outlook.live.com/owa/`
 
-[Add a test event](https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=20201231T193000&enddt=20201231T223000&subject=Bithday&body=With%20clowns%20and%20stuff&location=North%20Pole)
+[Add a test event](https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=20201231T193000&enddt=20201231T223000&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole)
 
 ## Parameters
 
@@ -53,7 +53,7 @@ required: yes
 
 format: string
 
-example: `subject=Bithday`
+example: `subject=Birthday`
 
 description: event title.
 

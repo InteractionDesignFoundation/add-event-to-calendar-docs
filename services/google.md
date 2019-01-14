@@ -10,7 +10,7 @@ You can see it using web.archive wayback machine (it still works!):
 ## Basic URL
 `https://calendar.google.com/calendar/render`
 
-[Add a test event](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bithday&dates=20201231T193000Z/20201231T223000Z&details=With%20clowns%20and%20stuff&location=North%20Pole)
+[Add a test event](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday&dates=20201231T193000Z/20201231T223000Z&details=With%20clowns%20and%20stuff&location=North%20Pole)
 
 ## Parameters
 
@@ -30,7 +30,7 @@ required: yes
 
 format: text
 
-example: `text=Bithday`
+example: `text=Birthday`
 
 description: event title.
 

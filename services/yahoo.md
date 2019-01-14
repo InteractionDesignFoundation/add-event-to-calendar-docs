@@ -24,7 +24,7 @@ required: yes
 
 format: date/datetime
 
-example: `title=Bithday`
+example: `title=Birthday`
 
 description: Event title.
 Line feeds will appear in the confirmation screen, but will not be saved.
