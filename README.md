@@ -17,6 +17,7 @@ parameters and features that we can use in our products.
 ### JavaScript
  1. [carlsednaoui/add-to-calendar-buttons](https://github.com/carlsednaoui/add-to-calendar-buttons)
  1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar)
+ 1. [AnandChowdhary/add-to-calendar](https://github.com/AnandChowdhary/add-to-calendar)
  
 ### PHP
  1. [spatie/calendar-links](https://github.com/spatie/calendar-links)
