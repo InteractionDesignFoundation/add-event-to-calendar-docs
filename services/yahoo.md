@@ -44,7 +44,7 @@ description: Event start time. Options:
 
 
 ### et
-required: yes
+required: no
 
 format: datetime (ISO8601)
 
