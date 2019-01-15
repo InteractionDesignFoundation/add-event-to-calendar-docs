@@ -15,11 +15,11 @@ possible parameters and features that we can use in our products.
 
 ## Popular packages
 ### JavaScript
- 1. [carlsednaoui/add-to-calendar-buttons](https://github.com/carlsednaoui/add-to-calendar-buttons)
- 1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar)
- 1. [AnandChowdhary/add-to-calendar](https://github.com/AnandChowdhary/add-to-calendar)
+ 1. [carlsednaoui/add-to-calendar-buttons](https://github.com/carlsednaoui/add-to-calendar-buttons) A simple ValillaJS library to add an "add to calendar" buttons for events.
+ 1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar) A simple ValillaJS library that allows you to add event to calendar easier 
+ 1. [AnandChowdhary/add-to-calendar](https://github.com/AnandChowdhary/add-to-calendar) A library that allows you to send invites to calendar events easier 
  
 ### PHP
- 1. [spatie/calendar-links](https://github.com/spatie/calendar-links)
+ 1. [spatie/calendar-links](https://github.com/spatie/calendar-links) A package to create "Add event to calendar" links
 
 _List your package/repo here_
