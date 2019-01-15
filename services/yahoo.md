@@ -6,7 +6,7 @@ There is no official documentation.
 ## Basic URL
 `https://calendar.yahoo.com/`
 
-[Add a test event](https://calendar.yahoo.com/?v=60&st=st20201231T193000&DUR=0200&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
+[Add a test event](https://calendar.yahoo.com/?v=60&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
 
 ## Parameters
 
@@ -43,6 +43,16 @@ description: Event start time. Options:
  - `20201231`: vent start time for an all day event. `DUR` value is ignored if this form is used.
 
 
+### et
+required: yes
+
+format: datetime (ISO8601)
+
+example: `et=20201231T193000Z`
+
+description: Event end time. Options the same as for `st` parameter.
+Note that `dur` parameter will be ignored if `et` is specified.
+
 ### dur
 required: no
 
@@ -51,14 +61,17 @@ format: time (`HHmm`)
 example: `dur=0200`
 
 description: Duration of the event.
-Format is HHMM, zero-padded.
+Format is HHmm, zero-padded.
 MM may range up to 99, and is converted into hours appropriately.
 HH values over 24 hours appear to be modulated by 24.
 Durations that span midnight behave strangely.
 Leave this blank if the event has no specific end time, or if this is an all-day event.
+Note that `dur` parameter will be ignored if `et` is specified.
 
-### type
+### ~type~
 required: no
+
+status: propably not supported anymore (or format is changed)
 
 format: number
 
