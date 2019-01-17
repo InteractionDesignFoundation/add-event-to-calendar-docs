@@ -23,3 +23,8 @@ possible parameters and features that we can use in our products.
  1. [spatie/calendar-links](https://github.com/spatie/calendar-links) A package to create "Add event to calendar" links
 
 _List your package/repo here_
+
+
+
+## Materials
+ 1. [How to Create an “Add to Calendar” Link for Your Emails](https://litmus.com/blog/how-to-create-an-add-to-calendar-link-for-your-emails)
