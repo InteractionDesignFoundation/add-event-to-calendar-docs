@@ -118,4 +118,6 @@ description: set recurring events.
 
     
 ## Tools
+1. [Google calendar link generator](http://kalinka.tardate.com/)
 1. [Google calendar link generator](http://output.jsbin.com/xujuluw)
+
