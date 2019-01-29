@@ -217,15 +217,6 @@ example: ``
 
 description: ?
 
-### remadr
-required: no
-
-format: text
-
-example: ``
-
-description: Remidner email address
-
 
 ### rem1
 required: no
@@ -234,7 +225,7 @@ format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
 
 example: `rem1=1D` (`1D` means 1day)
 
-description: When reminder 1 (email) should be sent.
+description: When reminder 1 should be sent.
  
  
 ### rem2
@@ -244,8 +235,30 @@ format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
 
 example: `rem2=6H`
 
-description: When reminder 2 (Mobile/Desktop) should be sent. Cannot have a reminder 2 without a reminder 1.
+description: When reminder 2 should be sent. Cannot have a reminder 2 without a reminder 1.
 
+
+### ~remadr~
+required: no
+
+status: deprecated
+
+format: text
+
+example: `remadr=some@example.com`
+
+description: Probably setup an email address to send notification for a reminder.
+
+
+### ~msngr~
+required: no
+
+status: deprecated. Only `true` makes sense but it's `true` by default
+
+format: `true`/`false`
+
+description: Probably enables messenger notification for a reminder.
+ 
 
 ### uid
 required: no
