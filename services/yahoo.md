@@ -56,17 +56,18 @@ Note that `dur` parameter will be ignored if `et` is specified.
 ### dur
 required: no
 
-format: time (`HHmm`)
+format: time (`HHmm`) or `allday`
 
 example: `dur=0200`
 
 description: Duration of the event.
-Format is HHmm, zero-padded.
-MM may range up to 99, and is converted into hours appropriately.
-HH values over 24 hours appear to be modulated by 24.
+Format is `HHmm`, zero-padded.
+`mm` may range up to 99, and is converted into hours appropriately.
+`HH` values over 24 hours appear to be modulated by 24.
 Durations that span midnight behave strangely.
 Leave this blank if the event has no specific end time, or if this is an all-day event.
 Note that `dur` parameter will be ignored if `et` is specified.
+Used only when `ed` is not specified OR value is `allday`
 
 ### ~type~
 required: no
@@ -195,4 +196,62 @@ example: `REND=20191231`
 description: Used to specify when a recurring event pattern ends.
 Date format: `YYYYMMDD`
 
+
+### invId
+
+required: no
+
+format: text
+
+example: ``
+
+description: ?
+
+### recurId
+
+required: no
+
+format: text
+
+example: ``
+
+description: ?
+
+### remadr
+required: no
+
+format: text
+
+example: ``
+
+description: Remidner email address
+
+
+### rem1
+required: no
+
+format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
+
+example: `rem1=1D` (`1D` means 1day)
+
+description: When reminder 1 (email) should be sent.
  
+ 
+### rem2
+required: no
+
+format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
+
+example: `rem2=6H`
+
+description: When reminder 2 (Mobile/Desktop) should be sent. Cannot have a reminder 2 without a reminder 1.
+
+
+### uid
+required: no
+
+format: text
+
+example: `uid=750e0c92aa33a7382460a280c2dfb8e6`
+
+description: Unique event ID. You can use specify to open a dialog to change existing event.
