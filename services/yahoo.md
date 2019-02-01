@@ -121,8 +121,10 @@ This may contain HTML, but all tags will be stripped out.
 This appears to accept quite a large amount of text,
 considering that it is being passed through on a query string.
 
-### URL
+### ~url~
 required: no
+
+status: propably not supported anymore (there is no input for URL in a form)
 
 format: URL
 
