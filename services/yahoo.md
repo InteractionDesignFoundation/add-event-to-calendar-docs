@@ -6,7 +6,7 @@ There is no official documentation.
 ## Basic URL
 `https://calendar.yahoo.com/`
 
-[Add a test event](https://calendar.yahoo.com/?v=60&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
+[Add a test event](https://calendar.yahoo.com/?v=60&title=Birthday&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
 
 ## Parameters
 
