@@ -77,15 +77,31 @@ example: `location=North Pole`
 description: set location of the event.
 Make sure it's an address google maps can read easily.
 
-### trp
+### crm
+
 required: no
 
-format: true/false
+possible values: `AVAILABLE`, `BUSY`, `BLOCKING`
+
+format: string
+
+example: `crm=AVAILABLE`
+
+description: if Free, Busy, or Out of Office respectively.
+
+### trp
+
+required: no
+
+possible values: `true`, `false`
+
+format: string
 
 example: `trp=false`
 
 description: Show event as busy (true) or available (false).
-Stands for [RFC 5545 transparency](https://tools.ietf.org/html/rfc5545#section-3.8.2.7). 
+Stands for [RFC 5545 transparency](https://tools.ietf.org/html/rfc5545#section-3.8.2.7).
+It's ignored for all day events, please refer to `crm` instead.
 
     
 ### sprop
