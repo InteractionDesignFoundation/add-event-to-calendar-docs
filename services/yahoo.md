@@ -271,4 +271,4 @@ format: text
 
 example: `uid=750e0c92aa33a7382460a280c2dfb8e6`
 
-description: Unique event ID. You can use specify to open a dialog to change existing event.
+description: Unique event ID. Using it, you can change existing events, do not add a new one.
