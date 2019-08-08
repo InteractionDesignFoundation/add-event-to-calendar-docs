@@ -53,6 +53,8 @@ example: `et=20201231T193000Z`
 description: Event end time. Options the same as for `st` parameter.
 Note that `dur` parameter will be ignored if `et` is specified.
 
+⚠️ This parameter appears to be broken with respect to timezones, we reccomend to to use `dur` instead.
+
 ### dur
 required: no
 
