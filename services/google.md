@@ -37,7 +37,7 @@ description: event title.
 ### dates
 required: yes
 
-format: `YYYYMMDDToHHmmSSZ/YYYYMMDDToHHmmSSZ`
+format: `YYYYMMDDTHHmmSSZ/YYYYMMDDTHHmmSSZ`
 
 example: `dates=20201231T193000Z/20201231T223000Z`
 
