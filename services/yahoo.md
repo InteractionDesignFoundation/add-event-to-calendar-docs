@@ -229,7 +229,7 @@ format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
 
 example: `rem1=1D` (`1D` means 1day)
 
-description: When reminder 1 should be sent.
+description: When reminder 1 should be sent. Set to 0D for no reminder.
  
  
 ### rem2
