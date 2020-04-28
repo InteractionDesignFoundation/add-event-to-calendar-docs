@@ -6,7 +6,7 @@ There is no official documentation.
 ## Basic URL
 `https://outlook.live.com/calendar/0/deeplink/compose`
 
-[Add a test event](https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=20201231T193000&enddt=20201231T223000&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole)
+[Add a test event](https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2020-12-31T19:30:00Z&enddt=2020-12-31T22:30:00Z&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole)
 
 ## Parameters
 
@@ -31,20 +31,20 @@ description: Action name.
 ### startdt
 required: yes
 
-format: datetime (`YYYYMMDDTHHmmSS`) or date (`YYYYMMDD`, for all-day events) in UTC
+format: datetime (`YYYY-MM-DD-THH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day events) in UTC
 
-example: `startdt=20201231T193000`
+example: `startdt=2020-12-31T19:30:00Z`
 
 description: The start date for the event.
-A datetime will be automatically convetred to user's timezone.
-To specify all-day events use the `YYYYMMDD` format.
+You can omit trailing `Z`, in this case script assumes that time specified current user's timezone. 
+To specify all-day events use the `YYYY-MM-DD` format.
 
 ### enddt
 required: yes
 
-format: datetime (`YYYYMMDDTHHmmSS`) or date (`YYYYMMDD`, for all-day events) in UTC
+format: datetime (`YYYY-MM-DD-THH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day events) in UTC
 
-example: `enddt=20201231T223000`
+example: `enddt=2020-12-31T22:30:00Z`
 
 description: The end time of the event, format as for `startdt`.
 
