@@ -6,7 +6,7 @@ There is no official documentation.
 ## Basic URL
 `https://calendar.yahoo.com/`
 
-[Add a test event](https://calendar.yahoo.com/?v=60&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
+[Add a test event](https://calendar.yahoo.com/?v=60&title=Birthday&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
 
 ## Parameters
 
@@ -52,6 +52,8 @@ example: `et=20201231T193000Z`
 
 description: Event end time. Options the same as for `st` parameter.
 Note that `dur` parameter will be ignored if `et` is specified.
+
+⚠️ This parameter appears to be broken with respect to timezones, we reccomend to to use `dur` instead.
 
 ### dur
 required: no
@@ -121,8 +123,10 @@ This may contain HTML, but all tags will be stripped out.
 This appears to accept quite a large amount of text,
 considering that it is being passed through on a query string.
 
-### URL
+### ~url~
 required: no
+
+status: propably not supported anymore (there is no input for URL in a form)
 
 format: URL
 
@@ -225,7 +229,7 @@ format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
 
 example: `rem1=1D` (`1D` means 1day)
 
-description: When reminder 1 should be sent.
+description: When reminder 1 should be sent. Set to 0D for no reminder.
  
  
 ### rem2
@@ -267,4 +271,4 @@ format: text
 
 example: `uid=750e0c92aa33a7382460a280c2dfb8e6`
 
-description: Unique event ID. You can use specify to open a dialog to change existing event.
+description: Unique event ID. Using it, you can change existing events, do not add a new one.
