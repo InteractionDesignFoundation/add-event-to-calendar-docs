@@ -4,9 +4,9 @@
 There is no official documentation.
 
 ## Basic URL
-`https://outlook.live.com/owa/`
+`https://outlook.live.com/calendar/0/deeplink/compose`
 
-[Add a test event](https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=20201231T193000&enddt=20201231T223000&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole)
+[Add a test event](https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=20201231T193000&enddt=20201231T223000&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole)
 
 ## Parameters
 
