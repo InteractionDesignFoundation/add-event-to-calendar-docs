@@ -5,6 +5,7 @@ There is no official documentation.
 
 ## Basic URL
 `https://outlook.live.com/calendar/0/deeplink/compose`
+`https://outlook.office.com/calendar/0/deeplink/compose` (for Office 365)
 
 [Add a test event](https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2020-12-31T19:30:00Z&enddt=2020-12-31T22:30:00Z&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole)
 
