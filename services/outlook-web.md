@@ -37,7 +37,7 @@ format: datetime (`YYYY-MM-DD-THH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day ev
 example: `startdt=2020-12-31T19:30:00Z`
 
 description: The start date for the event.
-You can omit trailing `Z`, in this case script assumes that time specified current user's timezone. 
+You can omit trailing `Z`, in this case script assumes that time specified in current user's timezone. 
 To specify all-day events use the `YYYY-MM-DD` format.
 
 ### enddt
