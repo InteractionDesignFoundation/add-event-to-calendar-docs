@@ -277,7 +277,7 @@ description: Probably setup an email address to send notification for a reminder
 ### ~msngr~
 required: no
 
-status: deprecated. Only `true` makes sense but it's `true` by default
+status: deprecated. Only `true` makes sense, but it's `true` by default.
 
 format: `true`/`false`
 
