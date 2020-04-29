@@ -18,7 +18,7 @@ format: string
 
 example: `path=/calendar/action/compose`
 
-description: Internal application path.
+description: internal application path.
 
 ### rru
 required: yes
@@ -27,7 +27,7 @@ format: string (`addevent`)
 
 example: `rru=addevent`
 
-description: Action name.
+description: action name.
 
 ### startdt
 required: yes
@@ -84,3 +84,29 @@ format: string
 example: `location=North Pole`
 
 description: set location of the event.
+
+### online
+required: no
+
+format: boolean (any value means `true`)
+
+description: toggle "Skype meeting" button.
+
+example: `online=1`
+
+### to
+required: no
+
+format: string
+
+description: A comma-separated list of emails of requered attendees.
+
+example: `to=santa@example.com,easter.bunny@example.com` 
+
+### cc
+format: string
+
+description: A comma-separated list of emails of optional attendees.
+
+example: `cc=santa@example.com,easter.bunny@example.com` 
+ 
