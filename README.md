@@ -19,6 +19,7 @@ possible parameters and features that we can use in our products.
  1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar) A simple ValillaJS library that allows you to add event to calendar easier 
  1. [AnandChowdhary/calendar-link](https://github.com/AnandChowdhary/calendar-link) NPM package for generating calendar links for both Node.js and browsers
  1. [AnandChowdhary/add-to-calendar](https://github.com/AnandChowdhary/add-to-calendar) A library that allows you to send invites to calendar events easier 
+ 1. [jshor/datebook](https://github.com/jshor/datebook) An npm module that generates downloadable iCalendar files and URLs for adding events to popular calendar apps.
  
 ### PHP
  1. [spatie/calendar-links](https://github.com/spatie/calendar-links) A package to create "Add event to calendar" links
