@@ -32,7 +32,7 @@ description: action name.
 ### startdt
 required: yes
 
-format: datetime (`YYYY-MM-DD-THH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day events) in UTC
+format: datetime (`YYYY-MM-DDTHH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day events) in UTC
 
 example: `startdt=2020-12-31T19:30:00Z`
 
@@ -43,7 +43,7 @@ To specify all-day events use the `YYYY-MM-DD` format.
 ### enddt
 required: yes
 
-format: datetime (`YYYY-MM-DD-THH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day events) in UTC
+format: datetime (`YYYY-MM-DDTHH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day events) in UTC
 
 example: `enddt=2020-12-31T22:30:00Z`
 
