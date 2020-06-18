@@ -23,6 +23,9 @@ possible parameters and features that we can use in our products.
  
 ### PHP
  1. [spatie/calendar-links](https://github.com/spatie/calendar-links) A package to create "Add event to calendar" links
+ 
+ ### Ruby
+ 1. [jaredlt/add_to_calendar](https://github.com/jaredlt/add_to_calendar) A ruby gem to generate 'Add To Calendar' URLs for Apple, Google, Office 365, Outlook, Outlook.com and Yahoo calendars
 
 _List your package/repo here_
 
