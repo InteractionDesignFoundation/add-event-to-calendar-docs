@@ -186,10 +186,12 @@ Examples:
  - Week: `01Wk`
  - Month: `01Mh`
  - Year: `01Yr`
- - Mon Wedn Fri: `01MoWeFr`
- - Tues Thurs: `01TuTh`
- - Mon – Fri: `01MoTuWeThFr`
- - Sat – Sun: `01SuSa`
+ - Mon Wedn Fri: `01WkMoWeFr`
+ - Tues Thurs: `01WkTuTh`
+ - Mon – Fri: `01WkMoTuWeThFr`
+ - Sat – Sun: `01WkSuSa`
+ - Sat – Sun: `01WkSuSa`
+ - Second Tuesday of every month: `01Mh2Tu`
 
 
 ### REND
