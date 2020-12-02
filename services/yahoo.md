@@ -6,7 +6,7 @@ There is no official documentation.
 ## Basic URL
 `https://calendar.yahoo.com/`
 
-[Add a test event](https://calendar.yahoo.com/?v=60&title=Birthday&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole)
+[Add a test event](https://calendar.yahoo.com/?v=60&title=Birthday&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole&inv_list=John+Doe+%3Cjohn@example.com%3E,Jane+Doe+%3Cjane@example.com%3E)
 
 ## Parameters
 
@@ -214,6 +214,16 @@ format: text
 example: ``
 
 description: ?
+
+### inv_list
+
+required: no
+
+format: string
+
+example: to=santa@example.com,easter.bunny@example.com
+
+description: A comma-separated list of emails of attendees.
 
 ### recurId
 
