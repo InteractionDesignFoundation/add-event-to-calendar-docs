@@ -215,6 +215,16 @@ example: ``
 
 description: ?
 
+### inv_list
+
+required: no
+
+format: string
+
+example: to=santa@example.com,easter.bunny@example.com
+
+description: A comma-separated list of emails of attendees.
+
 ### recurId
 
 required: no
