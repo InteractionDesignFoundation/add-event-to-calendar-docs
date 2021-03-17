@@ -22,7 +22,7 @@ description: Must be 60. Possibly a version number?
 ### title
 required: yes
 
-format: date/datetime
+format: text
 
 example: `title=Birthday`
 
