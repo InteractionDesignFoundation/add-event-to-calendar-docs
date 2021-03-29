@@ -6,7 +6,7 @@ There is no official documentation.
 ## Basic URL
 `https://calendar.yahoo.com/`
 
-[Add a test event](https://calendar.yahoo.com/?v=60&title=Birthday&st=20201231T193000&et=20201231T223000&desc=With%20clowns%20and%20stuff&in_loc=North%20Pole&inv_list=John+Doe+%3Cjohn@example.com%3E,Jane+Doe+%3Cjane@example.com%3E)
+[Add a test event](https://calendar.yahoo.com/?v=60&TITLE=Birthday&ST=20201231T193000&ET=20201231T223000&DESC=With%20clowns%20and%20stuff&in_loc=North%20Pole&inv_list=John+Doe+%3Cjohn@example.com%3E,Jane+Doe+%3Cjane@example.com%3E)
 
 ## Parameters
 
@@ -19,7 +19,7 @@ example: `v=60`
 
 description: Must be 60. Possibly a version number?
 
-### title
+### TITLE
 required: yes
 
 format: text
@@ -30,7 +30,7 @@ description: Event title.
 Line feeds will appear in the confirmation screen, but will not be saved.
 May not contain HTML.
 
-### st
+### ST
 required: yes
 
 format: datetime (ISO8601)
@@ -43,7 +43,7 @@ description: Event start time. Options:
  - `20201231`: vent start time for an all day event. `DUR` value is ignored if this form is used.
 
 
-### et
+### ET
 required: no
 
 format: datetime (ISO8601)
@@ -112,7 +112,7 @@ description: event's type
  - 35   Vacation
  - 36   Wedding
 
-### desc
+### DESC
 required: no
 
 format: text
