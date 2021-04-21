@@ -4,6 +4,7 @@
 There is no official documentation.
 
 ## Basic URL
+
 `https://calendar.yahoo.com/`
 
 [Add a test event](https://calendar.yahoo.com/?v=60&TITLE=Birthday&ST=20201231T193000&ET=20201231T223000&DESC=With%20clowns%20and%20stuff&in_loc=North%20Pole&inv_list=John+Doe+%3Cjohn@example.com%3E,Jane+Doe+%3Cjane@example.com%3E)
@@ -24,7 +25,7 @@ required: yes
 
 format: text
 
-example: `title=Birthday`
+example: `TITLE=Birthday`
 
 description: Event title.
 Line feeds will appear in the confirmation screen, but will not be saved.
@@ -35,28 +36,33 @@ required: yes
 
 format: datetime (ISO8601)
 
-example: `st=20201231T193000Z`
+example: `ST=20201231T193000Z`
 
 description: Event start time. Options:
+
  - `20201231T193000Z`: Event start time in UTC. Will be converted to the user's time zone.
  - `20201231T193000`: Event start time in user's local time
- - `20201231`: vent start time for an all day event. `DUR` value is ignored if this form is used.
-
+ - `20201231`: Event start time for an all day event. `DUR` value is ignored if this form is used.
 
 ### ET
-required: no
+
+required: yes
 
 format: datetime (ISO8601)
 
-example: `et=20201231T193000Z`
+example: `ET=20201231T193000Z`
 
 description: Event end time. Options the same as for `st` parameter.
+
 Note that `dur` parameter will be ignored if `et` is specified.
 
-⚠️ This parameter appears to be broken with respect to timezones, we reccomend to use `dur` instead (for durations less than 100 hours).
+⚠️ This parameter appears to be broken with respect to timezones (need to confirm).
 
 ### dur
+
 required: no
+
+status: appears to no longer work
 
 format: time (`HHmm`) or `allday`
 
@@ -71,7 +77,7 @@ Leave this blank if the event has no specific end time, or if this is an all-day
 Note that `dur` parameter will be ignored if `et` is specified.
 Used only when `ed` is not specified OR value is `allday`.
 
-Note that the maximum duration yahoo can except is 99 hours and 59 minutes due to the limitation of the format. 
+Note that the maximum duration yahoo can except is 99 hours and 59 minutes due to the limitation of the format.
 
 ### ~type~
 required: no
@@ -117,7 +123,7 @@ required: no
 
 format: text
 
-example: `desc=With clowns and stuff`
+example: `DESC=With clowns and stuff`
 
 description: description of your event.
 This may contain line breaks (encoded in the usual manner, these become %0A).
@@ -244,8 +250,8 @@ format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
 example: `rem1=1D` (`1D` means 1day)
 
 description: When reminder 1 should be sent. Set to 0D for no reminder.
- 
- 
+
+
 ### rem2
 required: no
 
@@ -276,7 +282,7 @@ status: deprecated. Only `true` makes sense but it's `true` by default
 format: `true`/`false`
 
 description: Probably enables messenger notification for a reminder.
- 
+
 
 ### uid
 required: no
