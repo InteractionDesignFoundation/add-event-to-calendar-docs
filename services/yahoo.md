@@ -178,10 +178,12 @@ example: `in_ph=404-589-1228`
 
 description: Phone.
 
-### RPAT
+### ~RPAT~
 required: no
 
 format: text
+
+status: **deprecated** as of August 2021
 
 example: `RPAT=01Wk`
 
