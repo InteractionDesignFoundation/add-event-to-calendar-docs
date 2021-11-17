@@ -23,6 +23,7 @@ calendar events using GET parameters. The main goal to find available options â€
 ## Popular packages
 
 ### JavaScript
+ 1. [jekuer/add-to-calendar-button](https://github.com/jekuer/add-to-calendar-button) An up-to-date ValillaJS script to render "add to calendar" buttons from simple JSON.
  1. [carlsednaoui/add-to-calendar-buttons](https://github.com/carlsednaoui/add-to-calendar-buttons) A simple ValillaJS library to add an "add to calendar" buttons for events.
  1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar) A simple ValillaJS library that allows you to add event to calendar easier 
  1. [AnandChowdhary/calendar-link](https://github.com/AnandChowdhary/calendar-link) NPM package for generating calendar links for both Node.js and browsers
