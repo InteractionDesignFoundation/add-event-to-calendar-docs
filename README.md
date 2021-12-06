@@ -23,6 +23,7 @@ calendar events using GET parameters. The main goal to find available options ‚Ä
 ## Popular packages
 
 ### JavaScript
+
  1. [jekuer/add-to-calendar-button](https://github.com/jekuer/add-to-calendar-button) An up-to-date ValillaJS script to render "add to calendar" buttons from simple JSON.
  1. [carlsednaoui/add-to-calendar-buttons](https://github.com/carlsednaoui/add-to-calendar-buttons) A simple ValillaJS library to add an "add to calendar" buttons for events.
  1. [jojoee/add2calendar](https://github.com/jojoee/add2calendar) A simple ValillaJS library that allows you to add event to calendar easier 
@@ -32,14 +33,17 @@ calendar events using GET parameters. The main goal to find available options ‚Ä
  
 
 ### PHP
+
  1. [spatie/calendar-links](https://github.com/spatie/calendar-links) A package to create "Add event to calendar" links
 
 
 ### Ruby
+
  1. [jaredlt/add_to_calendar](https://github.com/jaredlt/add_to_calendar) A ruby gem to generate 'Add To Calendar' URLs for Apple, Google, Office 365, Outlook, Outlook.com and Yahoo calendars
 
 _List your package/repo here_
 
 
 ## Materials
+
  1. [How to Create an ‚ÄúAdd to Calendar‚Äù Link for Your Emails](https://litmus.com/blog/how-to-create-an-add-to-calendar-link-for-your-emails)
