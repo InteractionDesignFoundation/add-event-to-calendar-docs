@@ -75,7 +75,7 @@ Format is `HHmm`, zero-padded.
 Durations that span midnight behave strangely.
 Leave this blank if the event has no specific end time, or if this is an all-day event.
 Note that `dur` parameter will be ignored if `et` is specified.
-Used only when `ed` is not specified OR value is `allday`.
+Used only when `et` is not specified OR value is `allday`.
 
 Note that the maximum duration yahoo can except is 99 hours and 59 minutes due to the limitation of the format.
 
