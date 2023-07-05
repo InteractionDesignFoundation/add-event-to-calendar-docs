@@ -8,7 +8,7 @@ The primary goal of this repository is to consolidate the efforts of
 developers to debugging/reverse-engineering calendar services to find 
 possible parameters and features that we can use in our products.
 
-Usually, 3rd party services doesn’t privide verbose documentation on how to create
+Usually, 3rd party services don't provide verbose documentation on how to create
 calendar events using GET parameters. The main goal to find available options — reverse-engineering.
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://user-images.githubusercontent.com/5278175/125625807-f8c33923-58ce-4e82-b00c-c26033f6930a.png" width="400"></a></p>

@@ -2,10 +2,12 @@
 
 ## Official documentation
 
-There is no official documentation for the current version, but Google
-had some documentation in the past.
-You can see it using web.archive wayback machine (it still works!):
-[Share your events with an individual, a group, or the whole world](https://web.archive.org/web/20120313011336/http://www.google.com/googlecalendar/event_publisher_guide.html). 
+Google has updated their official [Google Calendar API documentation](https://developers.google.com/calendar) for v3 including an updated [events reference](https://developers.google.com/calendar/api/v3/reference/events). The updated documentation also includes a [guide for creating events](https://developers.google.com/calendar/api/guides/create-events).
+
+Other helpful resources:
+* [Google Calendar Help](https://support.google.com/calendar/?hl=en#topic=10509740)
+* [Share your calendar with someone](https://support.google.com/calendar/answer/37082)
+* [Add a Google calendar to your website](https://support.google.com/calendar/answer/41207)
 
 ## Basic URL
 `https://calendar.google.com/calendar/render`
