@@ -4,10 +4,19 @@
 There is no official documentation.
 
 ## Basic URL
-`https://outlook.live.com/calendar/0/deeplink/compose`
-`https://outlook.office.com/calendar/0/deeplink/compose` (for Office 365)
+Outlook Live:  
+`https://outlook.live.com/calendar/deeplink/compose`
 
-[Add a test event](https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2020-12-31T19:30:00Z&enddt=2020-12-31T22:30:00Z&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole)
+Office 365:  
+`https://outlook.office.com/calendar/deeplink/compose`
+
+### Example
+
+Outlook Live:  
+`https://outlook.live.com/calendar/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2023-08-09T19:30:00Z&enddt=2023-08-09T22:30:00Z&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole`
+
+Office 365:  
+`https://outlook.office.com/calendar/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2023-08-09T19:30:00Z&enddt=2023-08-09T22:30:00Z&subject=Birthday&body=With%20clowns%20and%20stuff&location=North%20Pole`
 
 ## Parameters
 
@@ -37,7 +46,7 @@ format: datetime (`YYYY-MM-DDTHH:mm:SSZ`) or date (`YYYY-MM-DD`, for all-day eve
 example: `startdt=2020-12-31T19:30:00Z`
 
 description: The start date for the event.
-You can omit trailing `Z`, in this case script assumes that time specified in current user's timezone. 
+You can omit trailing `Z`, in this case script assumes that time specified in current user's timezone.
 To specify all-day events use the `YYYY-MM-DD` format.
 
 ### enddt
@@ -83,14 +92,14 @@ format: string
 
 example: `location=North Pole`
 
-description: set location of the event.
+description: set the location of the event.
 
 ### online
 required: no
 
 format: boolean (any value means `true`)
 
-description: toggle "Skype meeting" button.
+description: toggle the "Skype meeting" button.
 
 example: `online=1`
 
@@ -99,14 +108,13 @@ required: no
 
 format: string
 
-description: A comma-separated list of emails of requered attendees.
+description: A comma-separated list of emails of required attendees.
 
-example: `to=santa@example.com,easter.bunny@example.com` 
+example: `to=santa@example.com,easter.bunny@example.com`
 
 ### cc
 format: string
 
 description: A comma-separated list of emails of optional attendees.
 
-example: `cc=santa@example.com,easter.bunny@example.com` 
- 
+example: `cc=santa@example.com,easter.bunny@example.com`
