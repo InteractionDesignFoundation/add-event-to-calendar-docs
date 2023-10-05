@@ -10,7 +10,7 @@ Other helpful resources:
 * [Add a Google calendar to your website](https://support.google.com/calendar/answer/41207)
 
 ## Basic URL
-`https://calendar.google.com/calendar/render`
+`https://calendar.google.com/calendar/render` or `https://calendar.google.com/calendar/u/0/r/eventedit`
 
 [Add a test event](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday&dates=20201231T193000Z/20201231T223000Z&details=With%20clowns%20and%20stuff&location=North%20Pole)
 
@@ -25,7 +25,7 @@ possible values: `TEMPLATE`
 
 example: `action=TEMPLATE`
 
-description: A default required parameter.
+description: A default required parameter. (If you're using `https://calendar.google.com/calendar/u/0/r/eventedit`, this parameter is not required.)
 
 ### text
 required: yes
