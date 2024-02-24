@@ -118,3 +118,43 @@ format: string
 description: A comma-separated list of emails of optional attendees.
 
 example: `cc=santa@example.com,easter.bunny@example.com`
+
+
+### reqresponse
+format: string
+
+example: `reqresponse=true`
+
+### allowfw
+format: boolean ("true"/"false")
+
+description: Allow forwarding.
+
+example: `allowfw=true`
+
+### hideattn
+format: boolean ("true"/"false")
+
+description: Hide attendee list.
+
+example: `hideattn=true`
+
+
+### freebusy
+format: string (enum)
+
+options:
+ - `free`
+ - `tentative`
+ - `busy`
+ - `oof`
+ - `workingelsewhere`
+ - `nodata`
+
+### online
+format: any
+
+Description: "Skype meeting" flag.
+
+### folderid
+description: Unknown, probably Event id.
