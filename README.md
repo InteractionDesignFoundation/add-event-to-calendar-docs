@@ -1,7 +1,7 @@
 # About "Add  event to a calendar" repository
 
 This repository contains community-driven documents that describe how to add events 
-to different online calendar services that usually don't have official 
+to different online calendar services that usually don't have an official 
 documentation/specs.
 
 The primary goal of this repository is to consolidate the efforts of 
@@ -9,7 +9,7 @@ developers to debugging/reverse-engineering calendar services to find
 possible parameters and features that we can use in our products.
 
 Usually, 3rd party services don't provide verbose documentation on how to create
-calendar events using GET parameters. The main goal to find available options — reverse-engineering.
+calendar events using GET parameters. The main goal is to find available options — reverse-engineering.
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://user-images.githubusercontent.com/5278175/125625807-f8c33923-58ce-4e82-b00c-c26033f6930a.png" width="400"></a></p>
 
@@ -18,6 +18,7 @@ calendar events using GET parameters. The main goal to find available options �
 1. [Google calendar](/services/google.md)
 1. [Yahoo calendar](/services/yahoo.md)
 1. [Outlook Web](/services/outlook-web.md)
+1. [AOL](/services.md)
 
 
 ## Popular packages
@@ -44,6 +45,6 @@ calendar events using GET parameters. The main goal to find available options �
 _List your package/repo here_
 
 
-## Materials
-
+## Materials & Links
+ 1. [Online calendar link generator](https://stripo.email/calendar-link-generator/)
  1. [How to Create an “Add to Calendar” Link for Your Emails](https://litmus.com/blog/how-to-create-an-add-to-calendar-link-for-your-emails)
