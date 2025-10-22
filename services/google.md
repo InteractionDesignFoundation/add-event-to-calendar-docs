@@ -143,6 +143,17 @@ example: `recur=RRULE:FREQ=DAILY`
 
 description: set recurring events.
 
+### vcon
+required: no
+
+possible values: `meet`
+
+format: string
+
+example: `vcon=meet`
+
+description: add video meeting link
+
     
 ## Tools
 1. [Google calendar link generator](http://kalinka.tardate.com/)
