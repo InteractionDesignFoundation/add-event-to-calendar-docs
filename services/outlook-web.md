@@ -39,6 +39,32 @@ Each parameter carries one of three confidence markers:
 
 Last check on `outlook.live.com`: 2026-08-19. The Office 365 host was not re-tested.
 
+## URL length
+
+The compose endpoint accepts far longer URLs than the 2000 character figure usually quoted for the
+web in general. Measured against `outlook.live.com` on 2026-08-19, an 8000 character `body` arrives
+in the compose form intact, first and last bytes included.
+
+Bisecting the total URL length gives the ceiling:
+
+| total URL length | response |
+| --- | --- |
+| 30 975 | 200 |
+| 31 145 | 200 |
+| 31 161 | 400 |
+| 31 175 | 400 |
+
+Past that the host answers with a plain `Bad Request` page from IIS, so the request never reaches the
+calendar application at all.
+
+Treat roughly 31 000 characters as a best case rather than a guarantee. The limit counts the request
+line together with the request headers, and cookies live in those headers, so a signed-in session
+with a large authentication cookie runs out of room earlier.
+
+Independently of the server, browsers, proxies and email clients impose their own much lower limits,
+so keeping the whole URL under a couple of thousand characters is still the safe choice for links you
+hand to other people.
+
 ## Parameters
 
 ### path
