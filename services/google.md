@@ -19,7 +19,8 @@ Everything below therefore applies to both URLs.
 
 Prefer `render` when you do not control the device the link is opened on. It is the form Google itself
 hands out, and it is reported to be the only one that reaches the event editor on Android, where the
-`eventedit` path opens the Google Calendar app without starting event creation (see issue #56).
+`eventedit` path opens the Google Calendar app without starting event creation
+([discussion 62](https://github.com/InteractionDesignFoundation/add-event-to-calendar-docs/discussions/62)).
 
 ## How this was verified
 
