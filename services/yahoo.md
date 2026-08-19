@@ -7,7 +7,36 @@ There is no official documentation.
 
 `https://calendar.yahoo.com/`
 
-[Add a test event](https://calendar.yahoo.com/?v=60&TITLE=Birthday&ST=20201231T193000&ET=20201231T223000&DESC=With%20clowns%20and%20stuff&in_loc=North%20Pole&inv_list=John+Doe+%3Cjohn@example.com%3E,Jane+Doe+%3Cjane@example.com%3E)
+[Add a test event](https://calendar.yahoo.com/?v=60&TITLE=Birthday&ST=20201231T193000&ET=20201231T223000&DESC=With%20clowns%20and%20stuff&in_loc=North%20Pole&inv_list=john@example.com,jane@example.com)
+
+AOL Calendar (`https://calendar.aol.com/`) runs the same application bundle, so the parameters below apply there too.
+
+## How this was verified
+
+Yahoo Calendar parses the query string in the browser. The whole mapping lives in one function
+(`qm`) inside `https://s.yimg.com/nq/ep/*/bundle/bundle_epoch_calendar.js`, next to the table that
+lists every parameter the application knows about:
+
+```js
+{ST:"startTime", ET:"endTime", uid:"uid", recurId:"recurId", TITLE:"summary",
+ in_loc:"location", DESC:"description", inv_list:"attendees", DUR:"allDay",
+ REM1:"reminders", REM2:"reminders", TYPE:"type", RPAT:"recurrence",
+ VIEW:"view", REND:"recurrence_end"}
+```
+
+That table is exhaustive: any other name in the query string is ignored.
+Each parameter was then replayed against the live event composer.
+
+Last check: 2026-08-19.
+
+### Parameter name casing
+
+For every entry the parser first looks for the name exactly as written above, then for its
+all-lowercase form. So `TITLE` and `title` both work, `in_loc` is always lowercase, and a mixed
+form such as `Title` is ignored.
+
+`REND` is the one exception: the lowercase spelling is recognised but the value is then read back
+under the uppercase name, so only `REND` actually does anything.
 
 ## Parameters
 
@@ -18,7 +47,8 @@ format: number
 
 example: `v=60`
 
-description: Must be 60. Possibly a version number?
+description: without it the event composer does not open at all, the URL just lands on the calendar.
+It is not read by the parameter parser, so its role is to select the legacy compose entry point.
 
 ### TITLE
 required: yes
@@ -27,96 +57,84 @@ format: text
 
 example: `TITLE=Birthday`
 
-description: Event title.
-Line feeds will appear in the confirmation screen, but will not be saved.
-May not contain HTML.
+description: event title.
+`+` is decoded as a space, then the value is URL decoded.
+Line feeds will appear in the composer but are not saved.
+HTML is not rendered.
 
 ### ST
 required: yes
 
-format: datetime (ISO8601)
+format: datetime (`YYYYMMDDTHHmmss`) or date (`YYYYMMDD`)
 
-example: `ST=20201231T193000Z`
+example: `ST=20201231T193000`
 
-description: Event start time. Options:
+description: event start time. Options:
 
- - `20201231T193000Z`: Event start time in UTC. Will be converted to the user's time zone.
- - `20201231T193000`: Event start time in user's local time
- - `20201231`: Event start time for an all day event. `DUR` value is ignored if this form is used.
+ - `20201231T193000`: start time in the user's local time;
+ - `20201231`: start of an all-day event. `DUR` is ignored in this form;
+ - `20201231T193000Z`: **the trailing `Z` is currently not honoured**. The value is stored verbatim and rendered as a local time, so `19:30Z` shows up as `19:30` regardless of the user's timezone. Convert to the user's local time yourself.
+
+Yahoo has no timezone parameter at all.
 
 ### ET
 
 required: yes
 
-format: datetime (ISO8601)
+format: datetime (`YYYYMMDDTHHmmss`) or date (`YYYYMMDD`)
 
-example: `ET=20201231T193000Z`
+example: `ET=20201231T223000`
 
-description: Event end time. Options the same as for `st` parameter.
+description: event end time. Same options and the same `Z` limitation as `ST`.
 
-Note that `dur` parameter will be ignored if `et` is specified.
+When `ET` is present, `DUR` is ignored.
 
-⚠️ This parameter appears to be broken with respect to timezones (need to confirm).
-
-### dur
+### DUR
 
 required: no
-
-status: appears to no longer work
 
 format: time (`HHmm`) or `allday`
 
 example: `dur=0200`
 
-description: Duration of the event.
-Format is `HHmm`, zero-padded.
-`mm` may range up to 99, and is converted into hours appropriately.
-`HH` values over 24 hours appear to be modulated by 24.
-Durations that span midnight behave strangely.
-Leave this blank if the event has no specific end time, or if this is an all-day event.
-Note that `dur` parameter will be ignored if `et` is specified.
-Used only when `et` is not specified OR value is `allday`.
+description: duration of the event. Only used when `ET` is absent.
 
-Note that the maximum duration yahoo can except is 99 hours and 59 minutes due to the limitation of the format.
+ - `allday` marks the event as all-day;
+ - `HHmm` is added to `ST`, where `HH` is parsed from the first two characters and `mm` from the next two. Non numeric parts count as zero, and `0000` becomes 30 minutes.
 
-### ~type~
+The maximum is therefore 99 hours and 59 minutes, a limit of the format itself.
+If `ST` carries a `Z` suffix, the computed end time carries it too.
+
+### TYPE
 required: no
 
-status: propably not supported anymore (or format is changed)
+format: number (zero based index into the list below)
 
-format: number
+example: `TYPE=7`
 
-example: `type=10`
+description: the event charm, which the composer shows as "Type".
+The old numeric table (Anniversary 11, Appointment 10, and so on) no longer applies, and the
+string form (`TYPE=birthday`) is not accepted either. Current values:
 
-description: event's type
- - 11   Anniversay
- - 10   Appointment (default)
- - 12   Bill Payment
- - 13   Birthday
- - 27   Breakfast
- - 14   Call
- - 19   Chat
- - 37   Class
- - 26   Club Event
- - 24   Concert
- - 29   Dinner
- - 15   Graduation
- - 30   Happy Hour
- - 16   Holiday
- - 17   Interview
- - 28   Lunch
- - 18   Meeting
- - 23   Movie
- - 21   Net Event
- - 20   Other
- - 31   Party
- - 32   Performance
- - 33   Reunion
- - 34   Sports Event
- - 25   Travel
- - 22   TV Show
- - 35   Vacation
- - 36   Wedding
+| value | charm |
+| --- | --- |
+| 0 | General |
+| 1 | Invite |
+| 2 | Work |
+| 3 | School |
+| 4 | Red |
+| 5 | Yellow |
+| 6 | Green |
+| 7 | Birthday |
+| 8 | Anniversary |
+| 9 | Date |
+| 10 | Vacation |
+| 11 | Fun |
+| 12 | Bills |
+| 13 | Phone |
+| 14 | Doctor |
+| 15 | Flag |
+| 16 | Pet |
 
 ### DESC
 required: no
@@ -126,21 +144,10 @@ format: text
 example: `DESC=With clowns and stuff`
 
 description: description of your event.
-This may contain line breaks (encoded in the usual manner, these become %0A).
-This may contain HTML, but all tags will be stripped out.
-This appears to accept quite a large amount of text,
-considering that it is being passed through on a query string.
-
-### ~url~
-required: no
-
-status: propably not supported anymore (there is no input for URL in a form)
-
-format: URL
-
-example: `URL=https://example.com`
-
-description: If present, the URL will be used to create a link out of the event title.
+`+` is decoded as a space, then the value is URL decoded.
+Line breaks (`%0A`) are preserved.
+HTML is not rendered: tags arrive as literal text in the description box.
+The field accepts a large amount of text.
 
 ### in_loc
 required: no
@@ -149,142 +156,94 @@ format: text
 
 example: `in_loc=North Pole`
 
-description: event location.
-
-### in_st
-required: no
-
-format: text
-
-example: `in_st=Main str.`
-
-description: Street address.
-
-### in_csz
-required: no
-
-format: text
-
-example: `in_csz=Atlanta, GA, 30307`
-
-description: City / State / Zip.
-
-### in_ph
-required: no
-
-format: text
-
-example: `in_ph=404-589-1228`
-
-description: Phone.
-
-### ~RPAT~
-required: no
-
-format: text
-
-status: **deprecated** as of August 2021
-
-example: `RPAT=01Wk`
-
-description: Used to specify a recurring event.
-If this is present, then `REND` is also required.
-Examples:
- - Day: `01Dy`
- - Week: `01Wk`
- - Month: `01Mh`
- - Year: `01Yr`
- - Mon Wedn Fri: `01WkMoWeFr`
- - Tues Thurs: `01WkTuTh`
- - Mon – Fri: `01WkMoTuWeThFr`
- - Sat – Sun: `01WkSuSa`
- - Sat – Sun: `01WkSuSa`
- - Second Tuesday of every month: `01Mh2Tu`
-
-
-### REND
-required: no (yes if `RPAT` specified)
-
-format: datetime (`YYYYMMDD`)
-
-example: `REND=20191231`
-
-description: Used to specify when a recurring event pattern ends.
-Date format: `YYYYMMDD`
-
-
-### invId
-
-required: no
-
-format: text
-
-example: ``
-
-description: ?
+description: event location, stored as free text. It is not resolved against a maps provider.
 
 ### inv_list
 
 required: no
 
-format: string
+format: comma-separated plain email addresses
 
-example: to=santa@example.com,easter.bunny@example.com
+example: `inv_list=santa@example.com,easter.bunny@example.com`
 
-description: A comma-separated list of emails of attendees.
+description: guests.
+The value is split on commas and each part is used as an email address as is, so the
+`Name <email>` form no longer works: the display name ends up inside the address and the
+entry is either mangled or dropped.
+Note that `+` is **not** decoded as a space for this parameter, unlike `TITLE` and `DESC`.
 
-### recurId
-
+### RPAT
 required: no
 
 format: text
 
-example: ``
+example: `RPAT=01Wk`
 
-description: ?
+description: recurrence pattern. This parameter works again, it is not deprecated.
 
+The value is uppercased first, so the case of the letters does not matter.
+It starts with an interval and a unit:
 
-### rem1
+ - Day: `01Dy`
+ - Week: `01Wk`
+ - Month: `01Mh`
+ - Year: `01Yr`
+
+Anything after that is read as a list of weekdays taken from `SU`, `MO`, `TU`, `WE`, `TH`, `FR`, `SA`:
+
+ - Mon Wed Fri: `01WkMoWeFr`
+ - Tue Thu: `01WkTuTh`
+ - Mon to Fri: `01WkMoTuWeThFr`
+ - Sat and Sun: `01WkSuSa`
+ - Second Tuesday of every month: `01Mh2Tu`
+
+For the monthly unit the weekday must carry an ordinal of `1`, `2`, `3`, `4` or `-1`.
+A literal `5` in the value is rewritten to `-1`, which is how "last weekday of the month" is expressed.
+If the tail of the value is present but matches no weekday, the whole recurrence is dropped.
+
+### REND
+required: no (only used together with `RPAT`)
+
+format: `+YYYYMMDD`, a 10 digit unix timestamp, or `-Nt`
+
+example: `REND=%2B20270331`
+
+description: when the recurrence ends. It is ignored unless `RPAT` produced a valid pattern.
+
+Three forms are accepted:
+
+ - `+20270331`: end date. The leading plus is part of the value, so it must be encoded as `%2B` in a URL;
+ - `1774915200`: the same thing as a unix timestamp in seconds;
+ - `-10t`: stop after 10 occurrences.
+
+A bare `REND=20270331` (the form documented previously) is **not** recognised and is silently dropped.
+Only the uppercase spelling works.
+
+### REM1
 required: no
 
-format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
+format: `{NUMBER}`[`M`|`H`|`D`]
 
-example: `rem1=1D` (`1D` means 1day)
+example: `rem1=15M`
 
-description: When reminder 1 should be sent. Set to 0D for no reminder.
+description: first reminder, expressed as an offset before the event.
+Leading zeros are stripped and the value is uppercased, then it must land exactly on one of the
+offsets the composer supports:
 
+`5M`, `15M`, `30M`, `1H`, `2H`, `3H`, `6H`, `12H`, `1D`, `2D`, `3D`, `4D`, `5D`, `6D`, `7D`, `8D`, `9D`, `10D`, `11D`, `12D`, `13D`, `14D`
 
-### rem2
+Anything else falls back to "No Reminder".
+Both an alert and an email are enabled for the reminder.
+
+### REM2
 required: no
 
-format: text (length 2 or 3): `{NUMBER}`[`D`|`H`|`M`]
+format: same as `REM1`
 
 example: `rem2=6H`
 
-description: When reminder 2 should be sent. Cannot have a reminder 2 without a reminder 1.
-
-
-### ~remadr~
-required: no
-
-status: deprecated
-
-format: text
-
-example: `remadr=some@example.com`
-
-description: Probably setup an email address to send notification for a reminder.
-
-
-### ~msngr~
-required: no
-
-status: deprecated. Only `true` makes sense, but it's `true` by default.
-
-format: `true`/`false`
-
-description: Probably enables messenger notification for a reminder.
-
+description: second reminder. It is appended to the same list as `REM1`, so in practice you can
+also use `REM2` on its own.
 
 ### uid
 required: no
@@ -293,4 +252,33 @@ format: text
 
 example: `uid=750e0c92aa33a7382460a280c2dfb8e6`
 
-description: Unique event ID. Using it, you can change existing events, do not add a new one.
+description: unique event id. With it the link opens an existing event for editing instead of creating a new one.
+
+### recurId
+required: no
+
+format: text
+
+description: identifies one occurrence of a recurring event, used together with `uid`.
+
+### VIEW
+required: no
+
+format: string
+
+possible values: `today`, `day`, `week`, `month`, `year`, `list`
+
+example: `VIEW=month`
+
+description: calendar view. The parser reads it, but the effect could not be confirmed while the
+event composer is open.
+
+## Parameters that no longer exist
+
+None of these appear in the parameter table, so the application drops them:
+
+ - `in_st`, `in_csz`, `in_ph`: street, city/state/zip and phone. Put the whole address in `in_loc` instead.
+ - `URL`: used to turn the event title into a link.
+ - `invId`
+ - `remadr`: reminder email address. Reminders always enable email now.
+ - `msngr`: messenger notification.
